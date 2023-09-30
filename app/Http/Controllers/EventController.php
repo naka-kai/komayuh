@@ -15,7 +15,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -25,7 +25,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('events.create');
     }
 
     /**
@@ -36,7 +36,22 @@ class EventController extends Controller
      */
     public function store(StoreEventRequest $request)
     {
-        //
+        $event = new Event();
+
+        $file_name = $request->file('image')->getClientOriginalName();
+
+        $request->file('image')->storeAs('public/', $file_name);
+
+        $event->image = 'storage/' . $file_name;
+        $event->title = $request->input('title');
+        $event->date = $request->input('date');
+        $event->time = $request->input('time');
+        $event->place = $request->input('place');
+        $event->other = $request->input('other');
+
+        $event->save();
+
+        return redirect(route('top'));
     }
 
     /**
@@ -45,9 +60,11 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show($id)
     {
-        //
+        $event = Event::find($id);
+
+        return view('events.show', compact('event'));
     }
 
     /**
@@ -56,9 +73,11 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function edit(Event $event)
+    public function edit($id)
     {
-        //
+        $event = Event::find($id);
+
+        return view('events.edit', compact('event'));
     }
 
     /**
@@ -68,9 +87,24 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEventRequest $request, Event $event)
+    public function update(UpdateEventRequest $request, $id)
     {
-        //
+        $event = Event::find($id);
+
+        $file_name = $request->file('image')->getClientOriginalName();
+
+        $request->file('image')->storeAs('public/', $file_name);
+
+        $event->image = 'storage/' . $file_name;
+        $event->title = $request->input('title');
+        $event->date = $request->input('date');
+        $event->time = $request->input('time');
+        $event->place = $request->input('place');
+        $event->other = $request->input('other');
+
+        $event->save();
+
+        return redirect(route('top'));
     }
 
     /**
@@ -79,8 +113,11 @@ class EventController extends Controller
      * @param  \App\Models\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Event $event)
+    public function destroy($id)
     {
-        //
+        $event = Event::find($id);
+        $event->delete();
+
+        return redirect()->route('top');
     }
 }

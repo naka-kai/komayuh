@@ -1,4 +1,18 @@
 @include('header')
+@if (Route::has('login'))
+    @auth
+        <div class="flex justify-end">
+            <a class="inline-block bg-orange-300 py-2 px-4 mt-5 rounded" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+        </div>
+    @endauth
+@endif
 <!-- Blogs -->
 <section class="py-10">
     <p class="flex flex-col items-center font-bold text-2xl">
@@ -8,7 +22,7 @@
     <div class="flex flex-col md:flex-row md:justify-between md:items-end">
         <div class="flex flex-col md:w-1/3">
             <img src="{{ asset('storage/balloon.png') }}" alt="七ヶ浜ハンドメイド市ブログもこちら" class="w-1/3 md:w-3/4 ml-auto">
-            <a href="#" class="block hover:opacity-80">
+            <a href="http://akiuhandmade.blog.fc2.com/" class="block hover:opacity-80">
                 <div class="bg-orange-200 bg-opacity-50 rounded-lg w-3/4 md:w-full mx-auto py-5 px-8 flex justify-center items-center shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px]">
                     <p class="text-center font-bold md:text-lg">
                         秋保<br class="hidden md:block lg:hidden">ハンドメイド市<br>
@@ -19,7 +33,7 @@
         </div>
         <div class="flex flex-col md:w-1/3 md:ml-10 mt-5">
             <img src="{{ asset('storage/airplane.png') }}" class="w-1/3 md:w-2/3 ml-auto -mb-14 md:-mb-5 -rotate-45">
-            <a href="#" class="hover:opacity-80">
+            <a href="http://blog.livedoor.jp/tbchandmade/" class="hover:opacity-80">
                 <div class="bg-cyan-200 bg-opacity-50 rounded-lg w-3/4 md:w-full mx-auto py-5 px-8 flex justify-center items-center shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px]">
                     <p class="text-center font-bold md:text-lg">
                         仙台空港<br class="hidden md:block lg:hidden">ハンドメイド市<br>
@@ -29,7 +43,7 @@
             </a>
         </div>
         <div class="flex flex-col md:w-1/3 md:ml-10 mt-16">
-            <a href="#" class="hover:opacity-80">
+            <a href="https://handmadeks.hatenablog.com/" class="hover:opacity-80">
                 <div class="bg-pink-200 bg-opacity-50 rounded-lg w-3/4 md:w-full mx-auto py-5 px-8 flex justify-center items-center shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px]">
                     <p class="text-center font-bold md:text-lg">
                         KOMAYUH<br class="hidden md:block lg:hidden">企画<br>
@@ -41,9 +55,126 @@
     </div>
 </section>
 <!-- Topics -->
-@include('topics.index')
+<section class="py-10 mt-10">
+    <div class="flex items-center justify-center">
+        <img src="{{ asset('storage/cracker.png') }}" class="w-16">
+        <p class="ml-8 flex flex-col items-center font-bold text-2xl">
+            <small class="text-sm md:text-lg">トピックス</small>
+            <span class="font-bold md:text-4xl">Topics</span>
+        </p>
+    </div>
+    @if (Route::has('login'))
+        @auth
+            <div class="flex justify-center items-center mt-10">
+                <div>
+                    <a href="{{ route('topic.create') }}" class="border bg-pink-200 rounded font-bold hover:bg-opacity-80 px-10 py-3">新規登録</a>
+                </div>
+            </div>
+        @endauth
+    @endif
+    <div class="flex flex-col md:flex-row md:justify-between py-10 w-full">
+        @foreach ($topics as $topic)
+        <div class="mb-10 md:w-1/2">
+            <div class="border flex h-80">
+                <div class="w-2/3 bg-cover relative" style="background-image: url('{{ asset($topic->image) }}')">
+                    <p class="bg-white bg-opacity-70 p-2 text-lg md:text-xl font-bold">{!! nl2br(e($topic->title)) !!}</p>
+                    <p class="bg-white bg-opacity-90 absolute bottom-0 text-md p-2 md:text-lg">
+                        {!! nl2br(e($topic->subtitle)) !!}
+                    </p>
+                </div>
+                <div class="w-1/3 flex flex-col justify-center items-center text-lg">
+                    <p class="mb-3 font-bold">開催日</p>
+                    <p>{!! nl2br(e($topic->date)) !!}</p>
+                    @if (Route::has('login'))
+                    @auth
+                    <div class="flex flex-col justify-center items-center my-10">
+                        <div>
+                            <a href="{{ route('topic.edit', ['id' => $topic->id]) }}" class="border bg-blue-300 rounded font-bold hover:bg-opacity-80 px-5 py-2">編集</a>
+                        </div>
+                        <div>
+                            <form action="{{ route('topic.delete', ['id' => $topic->id]) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <input type="submit" value="削除" onclick="return confirm('本当に削除しますか？')" class="border bg-red-400 rounded font-bold hover:bg-opacity-80 px-5 py-2 mt-5">
+                            </form>
+                        </div>
+                    </div>
+                    @endauth
+                    @endif
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+</section>
 <!-- Event -->
-@include('events.index')
+<section class="pb-10">
+    <div class="flex items-center justify-center">
+        <p class="mr-8 flex flex-col items-center font-bold text-2xl">
+            <small class="text-sm md:text-lg">イベント</small>
+            <span class="font-bold md:text-4xl">Event</span>
+        </p>
+        <img src="{{ asset('storage/tento.png') }}" class="w-16">
+    </div>
+    @if (Route::has('login'))
+        @auth
+            <div class="flex justify-center items-center my-10">
+                <div>
+                    <a href="{{ route('event.create') }}" class="border bg-pink-200 rounded font-bold hover:bg-opacity-80 px-10 py-3">新規登録</a>
+                </div>
+            </div>
+        @endauth
+    @endif
+    <div class="mt-10 md:grid md:grid-cols-2 md:gap-5">
+        @foreach ($events as $event)
+        <div class="border shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px] mb-10 flex flex-col justify-between">
+            <div>
+                <figure>
+                    <img src="{{ $event->image }}" alt="{{ $event->title }}" class="w-full">
+                </figure>
+                <div class="text-center py-5">
+                    <p class="font-bold text-lg px-5 leading-8 border-b-4 border-pink-300 inline-block">
+                        {!! nl2br(e($event->title)) !!}
+                    </p>
+                    <div class="flex items-center text-lg mb-3 pb-3 px-5 mt-8 border-b border-gray-300">
+                        <div class="w-1/4 h-10 flex justify-center items-center bg-orange-300 rounded-md font-bold">開催日</div>
+                        <p class="ml-3 w-3/4">{!! nl2br(e($event->date)) !!}</p>
+                    </div>
+                    <div class="flex items-center text-lg mb-3 px-5 border-b pb-3 border-gray-300">
+                        <div class="w-1/4 h-10 flex justify-center items-center bg-orange-300 rounded-md font-bold">時間</div>
+                        <p class="ml-3 w-3/4">{!! nl2br(e($event->time)) !!}</p>
+                    </div>
+                    <div class="flex items-center text-lg mb-3 px-5 border-b pb-3 border-gray-300">
+                        <div class="w-1/4 h-10 flex justify-center items-center bg-orange-300 rounded-md font-bold">場所</div>
+                        <p class="ml-3 w-3/4">{!! nl2br(e($event->place)) !!}</p>
+                    </div>
+                    <div class="flex items-center text-lg mb-3 px-5 border-b pb-3 border-gray-300">
+                        <div class="w-1/4 h-10 flex justify-center items-center bg-orange-300 rounded-md font-bold">備考</div>
+                        <p class="ml-3 w-3/4">{!! nl2br(e($event->other)) !!}</p>
+                    </div>
+                </div>
+            </div>
+            @if (Route::has('login'))
+                @auth
+                    <div class="flex justify-center items-center mb-10">
+                        <div>
+                            <a href="{{ route('event.edit', ['id' => $event->id]) }}" class="border bg-blue-300 rounded font-bold hover:bg-opacity-80 px-10 py-3">編集</a>
+                        </div>
+                        <div>
+                            <form action="{{ route('event.delete', ['id' => $event->id]) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <input type="submit" value="削除" onclick="return confirm('本当に削除しますか？')" class="border bg-red-400 rounded font-bold ml-8 hover:bg-opacity-80 px-10 py-3">
+                            </form>
+                        </div>
+                    </div>
+                @endauth
+            @endif
+        </div>
+        @endforeach
+    </div>
+</section>
+
 <!-- Wanted -->
 <section class="py-10">
     <div class="flex flex-col items-center justify-center">

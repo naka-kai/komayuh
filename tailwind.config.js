@@ -9,14 +9,13 @@ module.exports = {
     theme: {
         extend: {
             backgroundImage: {
-                'header-bg': "url('/storage/header-bg.png')",
-                'handmade1': "url('/storage/handmade1.png')",
-                'pottery': "url('/storage/pottery.png')",
-                'flag-img': "url('/storage/flag1.png'), url('/storage/flag2.png')",
+                "header-bg": "url('/storage/header-bg.png')",
+                "flag-img":
+                    "url('/storage/flag1.png'), url('/storage/flag2.png')",
             },
             backgroundPosition: {
-                'flag-position': 'top, bottom',
-            }
+                "flag-position": "top, bottom",
+            },
         },
     },
     plugins: [],

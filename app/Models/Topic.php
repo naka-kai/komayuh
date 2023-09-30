@@ -5,18 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class Topic extends Model
 {
     use HasFactory;
 
-    protected $table = 'events';
+    protected $table = 'topics';
 
     protected $fillable = [
         'image',
         'title',
+        'subtitle',
         'date',
-        'time',
-        'place',
-        'other',
     ];
 }
