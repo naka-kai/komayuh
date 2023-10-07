@@ -35,7 +35,7 @@ class ContactController extends Controller
         // $image_path = Storage::putFileAs(
         //     'image', $request->file('image'), $new_file_name
         // );
-        $image_path = $request->file('image')->storeAs('public', $new_file_name);
+        $image_path = $image->storeAs('public', $new_file_name);
 
         // dd($image_path);
         return view('contacts.teiki.confirm', compact('inputs', 'file_name', 'new_file_name', 'extension'));

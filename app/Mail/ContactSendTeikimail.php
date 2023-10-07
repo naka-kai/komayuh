@@ -69,6 +69,6 @@ class ContactSendTeikimail extends Mailable
                 'visited_market' => $this->visited_market,
                 'questions' => $this->questions,
             ])
-            ->attach(asset('storage/' . $this->new_file_name));
+            ->attach(public_path('storage/' . $this->new_file_name));
     }
 }

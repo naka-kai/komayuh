@@ -1,3 +1,11 @@
+AuthType Basic
+AuthUserFile /home/xs024334/public_html/komayuh/public/.htpasswd
+AuthName "ログインパスワードを入力してください"
+Require valid-user
+
+<Files ~ "^\.(htaccess|htpasswd)$">
+	deny from all
+</Files>
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes

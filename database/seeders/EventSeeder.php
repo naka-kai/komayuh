@@ -16,7 +16,7 @@ class EventSeeder extends Seeder
     {
         $data = [
             [
-                'image' => '/storage/treasure_box.png',
+                'image' => asset('/komayuh/storage/treasure_box.png'),
                 'title' => 'ハンドメイド宝箱フェア（委託販売）〜キラキラフェア〜',
                 'date' => '【9月】26〜29日',
                 'time' => '（初日11時）10時30～17時30分',
@@ -24,7 +24,7 @@ class EventSeeder extends Seeder
                 'other' => '変更になる場合があります。',
             ],
             [
-                'image' => '/storage/airport.png',
+                'image' => asset('/komayuh/storage/airport.png'),
                 'title' => 'ハンドメイド宝箱フェア（委託販売）〜ハロウィンフェア〜',
                 'date' => '【10月】18～19日',
                 'time' => '（初日11時）10時30～17時30分',
