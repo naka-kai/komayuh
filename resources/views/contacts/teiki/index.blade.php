@@ -226,6 +226,17 @@
                             @enderror
                         </ul>
                     </div>
+                    <div class="flex flex-col my-8 justify-center items-center">
+                        <div class="flex justify-center items-center">
+                            <input type="checkbox" name="agreement">
+                            <label for="agreement" class="text-lg ml-2"><a href="#guideline" class="font-bold underline hover:opacity-80 text-blue-500">出展要項</a>に同意する</label>
+                        </div>
+                        <ul class="text-red-500">
+                            @error('agreement')
+                            <li>{{ $message }}</li>
+                            @enderror
+                        </ul>
+                    </div>
                     <div class="flex justify-center items-center my-10">
                         <button type="submit" class="border border-black bg-pink-200 hover:bg-opacity-80 py-2 px-8 rounded font-bold text-lg">入力内容確認</button>
                     </div>

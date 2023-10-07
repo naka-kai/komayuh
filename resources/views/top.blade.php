@@ -190,7 +190,7 @@
             <a href="{{ route('contact.index') }}" class="text-lg border-b border-blue-500 text-blue-500 hover:opacity-80">応募方法はこちら</a>
         </div>
         <a href="#" class="w-2/3 bg-white hover:opacity-80">
-            <div class="p-8 text-center border-orange-400 border-3 shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px] bg-flag-img bg-flag-position bg-contain bg-no-repeat">
+            <div class="p-8 text-center border-orange-400 border-3 shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px] bg-[url(https://kaiblo.com/komayuh/storage/flag1.png),url(https://kaiblo.com/komayuh/storage/flag2.png)] bg-flag-position bg-contain bg-no-repeat">
                 <h4 class="font-bold text-xl mb-5">
                     ひよこ塾<br>
                     〜ハンドメイド販売ノウハウ講座を楽しく学ぼう〜

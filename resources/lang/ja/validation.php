@@ -99,7 +99,7 @@ return [
     'password'             => '正しいパスワードを指定してください。',
     'present'              => ':attributeが存在していません。',
     'regex'                => ':attributeに正しい形式を指定してください。',
-    'required'             => ':attributeは必ず指定してください。',
+    'required'             => ':attributeは必ず入力してください。',
     'required_if'          => ':otherが:valueの場合、:attributeも指定してください。',
     'required_unless'      => ':otherが:valuesでない場合、:attributeを指定してください。',
     'required_with'        => ':valuesを指定する場合は、:attributeも指定してください。',
@@ -154,13 +154,21 @@ return [
     */
 
     'attributes' => [
-        'image' => 'イメージ画像',
+        'image' => '画像',
         'title' => 'タイトル',
         'date' => '開催日',
         'time' => '開催時間',
         'place' => '開催場所',
         'other' => '備考',
         'subtitle' => 'サブタイトル',
+        'name' => '氏名',
+        'address' => '住所',
+        'email' => '連絡先メールアドレス',
+        'tel' => '連絡先電話番号',
+        'shop_name' => '屋号（店名）',
+        'genre' => '作品ジャンル',
+        'entry_market' => '応募ハンドメイド市名',
+        'agreement' => '同意事項',
     ],
 
 ];

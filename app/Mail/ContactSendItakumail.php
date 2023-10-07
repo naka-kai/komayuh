@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ContactSendTeikimail extends Mailable
+class ContactSendItakumail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -56,7 +56,7 @@ class ContactSendTeikimail extends Mailable
         return $this
             ->from('skai.bluesea@gmail.com')
             ->subject('自動送信メール')
-            ->view('contacts.teiki.mail')
+            ->view('contacts.itaku.mail')
             ->with([
                 'entry_event' => $this->entry_event,
                 'name' => $this->name,

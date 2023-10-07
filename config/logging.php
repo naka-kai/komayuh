@@ -107,7 +107,7 @@ return [
 
         'null' => [
             'driver' => 'monolog',
-            'handler' => NullHandler::class,
+            'handler' => \Monolog\Handler\NullHandler::class,
         ],
 
         'emergency' => [
