@@ -23,11 +23,11 @@
 【作品ジャンル】<br>
 {!! nl2br(e($genre)) !!}
 <br><br>
-【応募ハンドメイド市名】<br>
-{!! nl2br(e($entry_event)) !!}
+【ワークショップ】<br>
+{!! nl2br(e($work_shop)) !!}
 <br><br>
-【見学済みのハンドメイド市名】<br>
-{!! nl2br(e($visited_market)) !!}
+【応募したい開催日】<br>
+{!! nl2br(e($date)) !!}
 <br><br>
 【質問等】<br>
 {!! nl2br(e($questions)) !!}

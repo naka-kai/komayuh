@@ -1,7 +1,7 @@
 @include('header')
 <div class="bg-pink-100 bg-opacity-50 mx-[calc(50%_-_50vw)]">
     <div class="container max-w-5xl px-8 py-20">
-        <h1 class="font-bold text-2xl mb-10 text-center">定期イベントの応募方法</h1>
+        <h1 class="font-bold text-2xl mb-10 text-center">定期イベントの応募内容確認</h1>
         <div class="text-lg leading-8">
             <form action="{{ route('teiki.thanks') }}" method="POST" enctype="multipart/form-data" id="teiki_form">
                 @csrf

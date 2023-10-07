@@ -169,6 +169,7 @@ return [
         'genre' => '作品ジャンル',
         'entry_market' => '応募ハンドメイド市名',
         'agreement' => '同意事項',
+        'work_shop' => 'ワークショップ',
     ],
 
 ];

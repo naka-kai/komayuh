@@ -1,140 +1,106 @@
 @include('header')
-<div class="bg-pink-100 bg-opacity-50 mx-[calc(50%_-_50vw)]">
+<div class="bg-orange-100 bg-opacity-50 mx-[calc(50%_-_50vw)]">
     <div class="container max-w-5xl px-8 py-20">
         <h1 class="font-bold text-2xl text-center mb-10">定期イベントの応募方法</h1>
-        <div class="text-lg leading-8">
-            <p>
-                <span class="border-b-4 border-pink-500">
-                    ブランチ仙台ハンドメイド宝箱・秋保・名取・七ヶ浜・荒町・ゆりあげハンドメイド市
-                </span>
-                は、お申し込みをいただくと、定期的に「出展者募集」のメールが配信されます。
-            </p>
-            <p class="mt-5">尚、下記の<a href="#guideline" class="font-bold underline hover:opacity-80">出展要項</a>を必ずご一読ください。</p>
-            <p class="mt-5">
-                ※出店される前に、各イベントの雰囲気を確認して頂くためにも、是非一度ご見学にいらして頂けると嬉しいです。その際、主催者より詳しいご説明をさせて頂きます。
-            </p>
-        </div>
         <div id="guideline">
             <h2 class="text-center font-bold text-2xl mb-8 mt-5 pt-5">出展要項</h2>
             <div class="text-lg leading-8">
                 <h3 class="text-xl font-bold">【​出展料について】</h3>
-                <div class="my-3">
-                    <h5>◼︎ 荒町ハンドメイド市</h5>
-                    <p class="ml-3">・・・出店料1,100円</p>
-                </div>
-                <div class="my-3">
-                    <h5>◼︎ 名取ハンドメイド市</h5>
-                    <p class="ml-3">・・・出店料1,100円 + 売上10%</p>
-                </div>
-                <div class="my-3">
-                    <h5>◼︎ 七ヶ浜ハンドメイド市</h5>
-                    <p class="ml-3">・・・出店料1,100円 + 売上10%</p>
-                </div>
-                <div class="my-3">
-                    <h5>◼︎ 秋保ハンドメイド市</h5>
-                    <p class="ml-3">・・・出店料1,600円 + 売上20%</p>
-                    <p class="ml-3">・・・4月より2,100円 + 売上20%</p>
-                </div>
-                <div class="my-3">
-                    <h5 class="mb-1">◼︎ 仙台空港ハンドメイド市</h5>
-                    <div class="ml-3 mb-1">
-                        <p class="ml-3">⚫︎ 出店料個人販売</p>
-                        <p class="ml-6">・・・平日3,300円 + 売上15%</p>
-                        <p class="ml-6">・・・土日祝4,400円 + 売上15%</p>
-                    </div>
-                    <div class="ml-3 mb-1">
-                        <p class="ml-3">⚫︎ 委託販売個人販売</p>
-                        <p class="ml-6">・・・平日2,200円 + 売上15%</p>
-                        <p class="ml-6">・・・土日祝2,700円 + 売上15%</p>
-                        <p class="ml-6">（委託販売個人については代行搬入搬出代含）</p>
-                    </div>
-                    <p class="ml-3">委託販売3日間 4,000円 + 売上15%</p>
-                </div>
-                <div class="my-3">
-                    <h5>◼︎ 仙台東口ハンドメイド市</h5>
-                    <p class="ml-3">・・・出店料1日3,800円</p>
-                    <p class="ml-3">・・・委託1日2,000円</p>
-                </div>
-                <div class="my-3">
-                    <h5>◼︎ ゆりあげハンドメイド市</h5>
-                    <p class="ml-3">・・・出店料1,600円 + 売上20%</p>
-                </div>
-                <div class="my-3">
-                    <h5>◼︎ コロナワールドハンドメイドフェア（お休み中）</h5>
-                    <p class="ml-3">・・・出店料3,600円</p>
-                </div>
-                <div class="my-3">
-                    <h5>◼︎ ハンドメイド宝箱</h5>
-                    <p class="ml-3">・・・平日2,600円</p>
-                    <p class="ml-3">・・・土日3,100円</p>
-                    <p class="ml-3">委託の場合1日1,000円 × 開催日数 + 売上10% + 保険日数（1日50円）</p>
-                </div>
-                <div class="my-3">
-                    <h5>◼︎ 秋保ハンドメイドテント村</h5>
-                    <p class="ml-3">・・・出店者料3,100円</p>
-                </div>
-                <div class="my-3">
-                    <h5>◼︎ ワクワクドキドキハンドフェアin夢メッセ会議棟</h5>
-                    <p class="ml-3">・・・1日4,600円</p>
-                    <p class="ml-3">・・・2日間9,000円</p>
-                </div>
-
-                <p class="mt-3">※名取・七ヶ浜・仙台空港・秋保ハンドメイド市の売上10～20%をお支払い頂く意味としては、場所をお借りしている企業様へのテナント料と考えて頂ければと思います。</p>
+                <ul class="list-disc list-inside">
+                    <li class="my-3">出店料3,000円 + 保険料100円 合計3,100円</li>
+                    <li class="my-3">2日間出展の方は、合計6,200円</li>
+                    <li class="my-3">先着順の受付となります。</li>
+                    <li class="my-3"><span class="border-b-4 border-orange-500">現在コロナ対策として当日いただいております。</span></li>
+                    <li class="my-3">申し込み後キャンセルの場合、全額となりますのでご了承ください。</li>
+                </ul>
+                <p class="mt-3">
+                    ※保険料とは、来場されたお客様への怪我や事故の補償となります。<br>
+                    出展者の作品の破損等を補償する保険ではありませんので、ご了承ください。<br>
+                    ＜例＞ 出展者のテントが飛んでお客様に当たり怪我をさせてしまった等。
+                </p>
             </div>
             <div class="text-lg my-8">
                 <h3 class="text-xl font-bold">【​出展者駐車場について】</h3>
-                <div class="my-3">
-                    <p class="leading-8"><span class="border-b-4 border-pink-500">秋保、七ヶ浜、名取、荒町、仙台空港、ハンドメイド宝箱、仙台東口、ゆりあげハンドメイド市</span>は1台無料駐車場があります。</p>
-                </div>
+                <ul class="leading-8 list-disc list-inside">
+                    <li class="my-3">無料駐車場をご用意しております。</li>
+                    <li class="my-3">
+                        1屋号1台とさせて頂きますので、同じブースの方々は乗り合いのご協力をお願いいたします。<br>
+                        <span class="ml-5">→ イベントの途中で車を移動する方、送り迎えの方、元々駐車場を利用しない方は必ずお問い合わせの際にお知らせください。</span>
+                    </li>
+                    <li class="my-3">駐車許可証をお渡ししますので、車のフロントに置いてください。</li>
+                    <li class="my-3">駐車場内でのトラブルは各自の責任となりますので、ご了承ください。</li>
+                </ul>
             </div>
             <div class="text-lg mb-8">
                 <h3 class="text-xl font-bold">【出展について】</h3>
                 <ul class="mt-3 list-disc list-inside leading-8">
-                    <li><span class="font-bold">共同出店は不可。</span>１ブース１屋号となりますのでご注意ください。</li>
-                    <li>基本的に、ご自身が手作り作品の展示販売となりますが、ご家族の方が屋号ない場合は一緒に展示販売可能とします。</li>
-                    <li>あまったり、使わなかった材料の販売ＯＫですが、材料のみ販売は✖</li>
-                    <li>テーブル&椅子セット600円貸し出し。先着順。（テーブルのみ1台300円）</li>
-                    <li>
-                        区画サイズは別段決めておりませんが、キャンプテーブル１～２個くらいです。
-                        <br>
-                        <span class="pl-8 font-bold">→各イベントで区画が全く違いますので、一度ご見学して頂けると嬉しいです。</span>
+                    <li class="my-3">募集数は、各最高50店舗、現在はコロナ対応のため30〜4-店舗（先着順の受付）</li>
+                    <li class="my-3">1日だけの出展OKです。（応募時、ご希望の日にちを記載してください）</li>
+                    <li class="my-3">応募時、作品の写真を1枚お送りください。</li>
+                    <li class="my-3"><span class="font-bold">共同出店は不可。</span>１ブース１屋号となりますのでご注意ください。</li>
+                    <li class="my-3">釣銭は各自ご準備お願いします。（本部での両替はできません）</li>
+                    <li class="my-3">
+                        必ず、名刺やショップカード等をご用意ください。<br>
+                            <span class="ml-5">→ 販売時、お客様へお渡しください。</span>
                     </li>
-                    <li>2～3日間の連続開催イベントでも、1日のみの出展可能です。</li>
-                    <li>冬季は終了時間が30分ほど早まる事もありますが、ご了承ください。</li>
-                    <li>ワークショップご希望の方は、応募時にお知らせください。</li>
-                    <li>ワークショップの詳細と、写真を1枚添付してメール送信お願いします。</li>
-                    <li>子供同伴なし。ペット同伴なし</li>
-                    <li>火気厳禁</li>
-                    <li>著作権は各自確認して販売お願いいたします。</li>
-                    <li>敷地内車中泊なし</li>
-                    <li>他の方の委託販売なし</li>
-                    <li>ルールを守らない場合は次回よりご遠慮頂く場合があります。</li>
-                    <li>基本雨天決行。</li>
-                    <li>においが出るもの、身体に触れるもの(石鹸、アロマ、マッサージなど)、生きている植物、飲食物販売なし（ハンドメイド宝箱、荒町は生きている植物、飲食物ＯＫ）アロマについては応相談</li>
+                    <li class="my-3">基本的に、ご自身がお作りになった作品の展示販売となりますが、ご家族の方が屋号なしの場合は一緒に出展販売可能とします。</li>
+                    <li class="my-3">余ったり、使わなかった材料の販売OK。材料のみの販売は✖</li>
+                    <li class="my-3">
+                        テーブルの貸し出しをしておりますが、数に限りがあります。<br>
+                        先着順1ブース1台。（有料300円）テーブル&椅子セット600円
+                    </li>
+                    <li class="my-3">ワークショップご希望の方は、応募時にお知らせください。</li>
                 </ul>
             </div>
-            <div class="text-lg mb-8">
-                <h3 class="text-xl font-bold">【釣銭について】</h3>
-                <div class="my-3">
-                    <p class="leading-8"><span class="border-b-4 border-pink-500">荒町ハンドメイド市・仙台東口ハンドメイド市・秋保ハンドメイドテント村・ワクワクドキドキハンドメイドフェア・ハンドメイド宝箱</span>はご自身で釣銭をご用意ください。</p>
-                    <p>（主催側での両替の可能）</p>
-                </div>
+            <div class="text-lg my-8">
+                <h3 class="text-xl font-bold">【区画サイズ・テント設置について】</h3>
+                <ul class="leading-8 list-disc list-inside">
+                    <li class="my-3">
+                        区画サイズは、3m × 3m のテントまで。<br>
+                            <span class="ml-5">→ 必ず4箇所ベグを打ち、4箇所に重りをしてください。</span><br>
+                            <span class="ml-5">→ ホームセンターで1個600円位のコンクリートの重りが売っています。</span>
+                    </li>
+                    <li class="my-3">2日間出展の方は、貴重品以外はブースに置いて行っても良いですが、テントは低くしてお帰り下さい。（テーブルも出来れば畳んでください）</li>
+                </ul>
+            </div>
+            <div class="text-lg my-8">
+                <h3 class="text-xl font-bold">【お子様連れの出展について】</h3>
+                <ul class="my-3 list-disc list-inside">
+                    <li class="my-3"><span class="border-b-4 border-orange-500">お子様連れでの出展はできません。（中学生よりOK）</span></li>
+            </div>
+            <div class="text-lg my-8">
+                <h3 class="text-xl font-bold">【キャンセル料について】</h3>
+                <ul class="my-3 list-disc list-inside">
+                    <li class="my-3">申し込み後のキャンセルの場合、全額となりますのでご了承ください。</li>
             </div>
             <div class="text-lg">
-                <h3 class="text-xl font-bold">【キャンセル料について】</h3>
-                <div class="my-3">
-                    <p>すべてのイベントで申し込み後全額がかかります。</p>
-                </div>
+                <h3 class="text-xl font-bold">【その他】</h3>
+                <ul class="my-3 list-disc list-inside">
+                    <li class="my-3">火気厳禁</li>
+                    <li class="my-3">ブース内ペット同伴無し。</li>
+                    <li class="my-3">著作権に関して各自確認して販売してください</li>
+                    <li class="my-3">敷地内車中泊できません</li>
+                    <li class="my-3">生きている植物、体に触れるもの（石鹸、アロマ、マッサージなど）飲食物販売なし。</li>
+                    <li class="my-3">ルールを守らない方は次回より出展をお断りする場合があります。</li>
+                    <li class="my-3">雨天決行ですが、嵐など悪天候で中止の場合は1,500円のみ返金になります。</li>
+                    <li class="my-3">子供同伴なし中学生よりOK</li>
+                    <li class="my-3">途中撤退なし</li>
+                    <li class="my-3">コロナ対策各自となりました</li>
+                    <li class="my-3">ブース内3名まで</li>
+                    <li class="my-3">タトゥーなど見えないようにご協力お願いいたします。</li>
+                    <li class="my-3">材料のみ販売なし</li>
+                    <li class="my-3">共同出展なし</li>
+                    <li class="my-3">当日ブース配置はくじで決定</li>
             </div>
         </div>
-        <div id="teiki_contact">
+        <div id="akiu_contact">
             <h2 class="text-center font-bold text-2xl mb-8 mt-16 pt-5">お問い合わせ</h2>
             <div class="text-lg leading-8">
-                <form action="{{ route('teiki.confirm') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('akiu.confirm') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="flex flex-col my-8 justify-center items-center">
                         <label for="entry_event" class="text-lg mb-2">【応募するイベント】</label>
-                        <input type="text" name="entry_event" value="定期イベント" class="border border-black w-2/3 mx-auto rounded p-2" readonly>
+                        <input type="text" name="entry_event" value="秋保テント村" class="border border-black w-2/3 mx-auto rounded p-2" readonly>
                     </div>
                     <div class="flex flex-col my-8 justify-center items-center">
                         <label for="name" class="text-lg mb-2">【氏名】</label>
@@ -200,19 +166,19 @@
                         </ul>
                     </div>
                     <div class="flex flex-col my-8 justify-center items-center">
-                        <label for="entry_market" class="text-lg mb-2">【応募ハンドメイド市名】</label>
-                        <textarea name="entry_market" placeholder="決定イベントを記載してください。" class="border border-black w-2/3 mx-auto rounded p-2">{{ old('entry_market') }}</textarea>
+                        <label for="work_shop" class="text-lg mb-2">【ワークショップ】</label>
+                        <textarea name="work_shop" placeholder="ワークショップをする方は内容を記載してください" class="border border-black w-2/3 mx-auto rounded p-2">{{ old('work_shop') }}</textarea>
                         <ul class="text-red-500">
-                            @error('entry_market')
+                            @error('work_shop')
                             <li>{{ $message }}</li>
                             @enderror
                         </ul>
                     </div>
                     <div class="flex flex-col my-8 justify-center items-center">
-                        <label for="visited_market" class="text-lg mb-2">【見学済みのハンドメイド市名】</label>
-                        <textarea name="visited_market" placeholder="KOMAYUH企画のハンドメイド市をご見学済みの場合は、どのイベントを見学して頂いたのかをご記入ください。" class="border border-black w-2/3 mx-auto rounded p-2">{{ old('visited_market') }}</textarea>
+                        <label for="date" class="text-lg mb-2">【応募したい開催日】</label>
+                        <textarea name="date" placeholder="1日だけの場合は、どちらかを選択" class="border border-black w-2/3 mx-auto rounded p-2">{{ old('date') }}</textarea>
                         <ul class="text-red-500">
-                            @error('visited_market')
+                            @error('date')
                             <li>{{ $message }}</li>
                             @enderror
                         </ul>
@@ -238,7 +204,7 @@
                         </ul>
                     </div>
                     <div class="flex justify-center items-center my-10">
-                        <button type="submit" class="border border-black bg-pink-200 hover:bg-opacity-80 py-2 px-8 rounded font-bold text-lg">入力内容確認</button>
+                        <button type="submit" class="border border-black bg-orange-200 hover:bg-opacity-80 py-2 px-8 rounded font-bold text-lg">入力内容確認</button>
                     </div>
                 </form>
             </div>

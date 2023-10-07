@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactSendTeikimail;
+use App\Mail\ContactSendAkiumail;
+use App\Mail\ContactSendItakumail;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -65,8 +67,8 @@ class ContactController extends Controller
             'shop_name' => 'required',
             'genre' => 'required',
             'image' => 'required',
-            'entry_market' => 'required',
-            'visited_market' => '',
+            'work_shop' => '',
+            'date' => 'required',
             'questions' => '',
             'agreement' => 'required',
         ]);
