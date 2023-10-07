@@ -49,10 +49,14 @@ Route::prefix('/contact')->group(function() {
     })->name('contact.teiki');
     Route::post('/teiki/confirm', [ContactController::class, 'teikiConfirm'])->name('teiki.confirm');
     Route::post('/teiki/thanks', [ContactController::class, 'teikiSend'])->name('teiki.thanks');
+    Route::get('/teiki/thanks', [ContactController::class, 'toTop'])->name('teiki.toTop');
 
     Route::get('/akiu', function() {
         return view('contacts.akiu.index');
     })->name('contact.akiu');
+    Route::post('/akiu/confirm', [ContactController::class, 'akiuConfirm'])->name('akiu.confirm');
+    Route::post('/akiu/thanks', [ContactController::class, 'akiuSend'])->name('akiu.thanks');
+    Route::get('/akiu/thanks', [ContactController::class, 'toTop'])->name('akiu.toTop');
 
     Route::get('/itaku', function() {
         return view('contacts.itaku.index');

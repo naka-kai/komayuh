@@ -14,7 +14,7 @@
             </a>
         </div>
         <div class="flex flex-col lg:w-1/3 lg:ml-10 mt-10 lg:mt-0">
-            <a href="./akiu.blade.php" class="block hover:opacity-80">
+            <a href="{{ route('contact.akiu') }}" class="block hover:opacity-80">
                 <div class="bg-orange-200 bg-opacity-50 rounded-lg w-3/4 lg:w-full mx-auto py-5 px-8 flex justify-center items-center shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px]">
                     <p class="text-center font-bold lg:text-lg">
                         秋保テント村
@@ -23,7 +23,7 @@
             </a>
         </div>
         <div class="flex flex-col lg:w-1/3 lg:ml-10 mt-10 lg:mt-0">
-            <a href="./itaku.blade.php" class="hover:opacity-80">
+            <a href="{{ route('contact.itaku') }}" class="hover:opacity-80">
                 <div class="bg-cyan-200 bg-opacity-50 rounded-lg w-3/4 lg:w-full mx-auto py-5 px-8 flex justify-center items-center shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px]">
                     <p class="text-center font-bold lg:text-lg">
                         委託イベント<br>
