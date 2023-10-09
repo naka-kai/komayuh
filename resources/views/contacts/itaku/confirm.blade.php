@@ -3,7 +3,7 @@
     <div class="container max-w-5xl px-8 py-20">
         <h1 class="font-bold text-2xl mb-10 text-center">定期イベントの応募方法</h1>
         <div class="text-lg leading-8">
-            <form action="{{ route('teiki.thanks') }}" method="POST" enctype="multipart/form-data" id="teiki_form">
+            <form action="{{ route('itaku.thanks') }}" method="POST" enctype="multipart/form-data" id="itaku_form">
                 @csrf
                 <div class="flex flex-col my-8 justify-center items-center">
                     <label for="entry_event" class="text-lg mb-2">【応募するイベント】</label>
@@ -49,14 +49,14 @@
                     <input type="hidden" name="extension" value="{{ $extension }}">
                 </div>
                 <div class="flex flex-col my-8 justify-center items-center">
-                    <label for="entry_market" class="text-lg mb-2">【応募ハンドメイド市名】</label>
-                    <p>{!! nl2br(e($inputs['entry_market'])) !!}</p>
-                    <textarea name="entry_market" placeholder="決定イベントを記載してください。" class="hidden">{{ $inputs['entry_market'] }}</textarea>
+                    <label for="work_shop" class="text-lg mb-2">【ワークショップ】</label>
+                    <p>{!! nl2br(e($inputs['work_shop'])) !!}</p>
+                    <textarea name="work_shop" class="hidden">{{ $inputs['work_shop'] }}</textarea>
                 </div>
                 <div class="flex flex-col my-8 justify-center items-center">
-                    <label for="visited_market" class="text-lg mb-2">【見学済みのハンドメイド市名】</label>
-                    <p>{!! nl2br(e($inputs['visited_market'])) !!}</p>
-                    <textarea name="visited_market" placeholder="KOMAYUH企画のハンドメイド市をご見学済みの場合は、どのイベントを見学して頂いたのかをご記入ください。" class="hidden">{{ $inputs['visited_market'] }}</textarea>
+                    <label for="date" class="text-lg mb-2">【応募したい開催日】</label>
+                    <p>{!! nl2br(e($inputs['date'])) !!}</p>
+                    <textarea name="date" class="hidden">{{ $inputs['date'] }}</textarea>
                 </div>
                 <div class="flex flex-col my-8 justify-center items-center">
                     <label for="questions" class="text-lg mb-2">【質問等】</label>
@@ -65,7 +65,7 @@
                 </div>
                 <p class="text-red-400 text-center">※ 送信には少し時間がかかります</p>
                 <div class="flex flex-col justify-center items-center my-10 md:flex-row-reverse">
-                    <button type="submit" name="action" value="submit" id="teiki_submit" class="border border-black bg-pink-200 hover:bg-opacity-80 py-2 px-8 rounded font-bold text-lg md:ml-8">送信</button>
+                    <button type="submit" name="action" value="submit" id="itaku_submit" class="border border-black bg-pink-200 hover:bg-opacity-80 py-2 px-8 rounded font-bold text-lg md:ml-8">送信</button>
                     <button type="submit" name="action" value="back" class="border border-black bg-gray-200 hover:bg-opacity-80 py-2 px-8 rounded font-bold text-lg mt-8 md:mt-0">戻る</button>
                 </div>
             </form>

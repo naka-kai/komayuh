@@ -28,17 +28,17 @@
                 <div class="flex flex-col my-8 justify-center items-center">
                     <label for="tel" class="text-lg mb-2">【連絡先電話番号】</label>
                     <p>{{ $inputs['tel'] }}</p>
-                    <input type="hidden" name="tel" value="{{ $inputs['tel'] }}" placeholder="080-1234-5678">
+                    <input type="hidden" name="tel" value="{{ $inputs['tel'] }}">
                 </div>
                 <div class="flex flex-col my-8 justify-center items-center">
                     <label for="shop_name" class="text-lg mb-2">【屋号（店名）】</label>
                     <p>{!! nl2br(e($inputs['shop_name'])) !!}</p>
-                    <textarea name="shop_name" placeholder="（アルファベット表記の場合は「ふりがな」も記載してください）" class="hidden">{{ $inputs['shop_name'] }}</textarea>
+                    <textarea name="shop_name" class="hidden">{{ $inputs['shop_name'] }}</textarea>
                 </div>
                 <div class="flex flex-col my-8 justify-center items-center">
                     <label for="genre" class="text-lg mb-2">【作品ジャンル】</label>
                     <p>{!! nl2br(e($inputs['genre'])) !!}</p>
-                    <textarea name="genre" placeholder="＜例＞アクセサリー、ベビーキッズ、布物、家具・生活雑貨など" class="hidden">{{ $inputs['genre'] }}</textarea>
+                    <textarea name="genre" class="hidden">{{ $inputs['genre'] }}</textarea>
                 </div>
                 <div class="flex flex-col my-8 justify-center items-center">
                     <label for="image" class="text-lg mb-2">【作品写真1枚】</label>
@@ -51,12 +51,17 @@
                 <div class="flex flex-col my-8 justify-center items-center">
                     <label for="entry_market" class="text-lg mb-2">【応募ハンドメイド市名】</label>
                     <p>{!! nl2br(e($inputs['entry_market'])) !!}</p>
-                    <textarea name="entry_market" placeholder="決定イベントを記載してください。" class="hidden">{{ $inputs['entry_market'] }}</textarea>
+                    <textarea name="entry_market" class="hidden">{{ $inputs['entry_market'] }}</textarea>
                 </div>
                 <div class="flex flex-col my-8 justify-center items-center">
                     <label for="visited_market" class="text-lg mb-2">【見学済みのハンドメイド市名】</label>
                     <p>{!! nl2br(e($inputs['visited_market'])) !!}</p>
-                    <textarea name="visited_market" placeholder="KOMAYUH企画のハンドメイド市をご見学済みの場合は、どのイベントを見学して頂いたのかをご記入ください。" class="hidden">{{ $inputs['visited_market'] }}</textarea>
+                    <textarea name="visited_market" class="hidden">{{ $inputs['visited_market'] }}</textarea>
+                </div>
+                <div class="flex flex-col my-8 justify-center items-center">
+                    <label for="work_shop" class="text-lg mb-2">【ワークショップ】</label>
+                    <p>{!! nl2br(e($inputs['work_shop'])) !!}</p>
+                    <textarea name="work_shop" class="hidden">{{ $inputs['work_shop'] }}</textarea>
                 </div>
                 <div class="flex flex-col my-8 justify-center items-center">
                     <label for="questions" class="text-lg mb-2">【質問等】</label>

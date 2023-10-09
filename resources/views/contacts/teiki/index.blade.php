@@ -218,6 +218,15 @@
                         </ul>
                     </div>
                     <div class="flex flex-col my-8 justify-center items-center">
+                        <label for="work_shop" class="text-lg mb-2">【ワークショップ】</label>
+                        <textarea name="work_shop" placeholder="ワークショップをする方は内容を記載してください" class="border border-black w-2/3 mx-auto rounded p-2">{{ old('work_shop') }}</textarea>
+                        <ul class="text-red-500">
+                            @error('work_shop')
+                            <li>{{ $message }}</li>
+                            @enderror
+                        </ul>
+                    </div>
+                    <div class="flex flex-col my-8 justify-center items-center">
                         <label for="questions" class="text-lg mb-2">【質問等】</label>
                         <textarea name="questions" placeholder="回答は、主催者よりメールもしくはお電話にてご連絡いたします。" class="border border-black w-2/3 mx-auto rounded p-2">{{ old('questions') }}</textarea>
                         <ul class="text-red-500">

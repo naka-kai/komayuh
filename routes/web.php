@@ -61,4 +61,7 @@ Route::prefix('/contact')->group(function() {
     Route::get('/itaku', function() {
         return view('contacts.itaku.index');
     })->name('contact.itaku');
+    Route::post('/itaku/confirm', [ContactController::class, 'itakuConfirm'])->name('itaku.confirm');
+    Route::post('/itaku/thanks', [ContactController::class, 'itakuSend'])->name('itaku.thanks');
+    Route::get('/itaku/thanks', [ContactController::class, 'toTop'])->name('itaku.toTop');
 });

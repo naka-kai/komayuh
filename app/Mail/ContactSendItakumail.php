@@ -20,8 +20,8 @@ class ContactSendItakumail extends Mailable
     private $genre;
     private $new_file_name;
     private $extension;
-    private $entry_market;
-    private $visited_market;
+    private $work_shop;
+    private $date;
     private $questions;
 
     /**
@@ -40,8 +40,8 @@ class ContactSendItakumail extends Mailable
         $this->genre = $inputs['genre'];
         $this->new_file_name = $inputs['new_file_name'];
         $this->extension = $inputs['extension'];
-        $this->entry_market = $inputs['entry_market'];
-        $this->visited_market = $inputs['visited_market'];
+        $this->work_shop = $inputs['work_shop'];
+        $this->date = $inputs['date'];
         $this->questions = $inputs['questions'];
     }
 
@@ -65,8 +65,8 @@ class ContactSendItakumail extends Mailable
                 'tel' => $this->tel,
                 'shop_name' => $this->shop_name,
                 'genre' => $this->genre,
-                'entry_market' => $this->entry_market,
-                'visited_market' => $this->visited_market,
+                'work_shop' => $this->work_shop,
+                'date' => $this->date,
                 'questions' => $this->questions,
             ])
             ->attach(public_path('storage/contact/' . $this->new_file_name));

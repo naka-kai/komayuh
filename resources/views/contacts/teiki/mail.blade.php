@@ -29,5 +29,8 @@
 【見学済みのハンドメイド市名】<br>
 {!! nl2br(e($visited_market)) !!}
 <br><br>
+【ワークショップ】<br>
+{!! nl2br(e($work_shop)) !!}
+<br><br>
 【質問等】<br>
 {!! nl2br(e($questions)) !!}

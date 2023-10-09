@@ -25,6 +25,7 @@ class ContactController extends Controller
             'image' => 'required',
             'entry_market' => 'required',
             'visited_market' => '',
+            'work_shop' => '',
             'questions' => '',
             'agreement' => 'required',
         ]);
@@ -111,8 +112,8 @@ class ContactController extends Controller
             'shop_name' => 'required',
             'genre' => 'required',
             'image' => 'required',
-            'entry_market' => 'required',
-            'visited_market' => '',
+            'work_shop' => '',
+            'date' => 'required',
             'questions' => '',
             'agreement' => 'required',
         ]);

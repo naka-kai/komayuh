@@ -22,6 +22,7 @@ class ContactSendTeikimail extends Mailable
     private $extension;
     private $entry_market;
     private $visited_market;
+    private $work_shop;
     private $questions;
 
     /**
@@ -42,6 +43,7 @@ class ContactSendTeikimail extends Mailable
         $this->extension = $inputs['extension'];
         $this->entry_market = $inputs['entry_market'];
         $this->visited_market = $inputs['visited_market'];
+        $this->work_shop = $inputs['work_shop'];
         $this->questions = $inputs['questions'];
     }
 
@@ -67,6 +69,7 @@ class ContactSendTeikimail extends Mailable
                 'genre' => $this->genre,
                 'entry_market' => $this->entry_market,
                 'visited_market' => $this->visited_market,
+                'work_shop' => $this->work_shop,
                 'questions' => $this->questions,
             ])
             ->attach(public_path('storage/contact/' . $this->new_file_name));
