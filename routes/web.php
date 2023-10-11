@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\HiyokoController;
 use App\Http\Controllers\TopController;
 use App\Http\Controllers\TopicController;
 use Illuminate\Support\Facades\Route;
@@ -35,10 +36,6 @@ Route::get('/topic/{id}', [TopicController::class, 'edit'])->middleware(['auth']
 Route::put('/topic/{id}', [TopicController::class, 'update'])->middleware(['auth'])->name('topic.update');
 Route::delete('/topic/{id}', [TopicController::class, 'destroy'])->name('topic.delete');
 
-// Route::get('/contact', function() {
-//     return view('contacts.index');
-// })->name('contact.index');
-
 Route::prefix('/contact')->group(function() {
     Route::get('/', function() {
         return view('contacts.index');
@@ -65,3 +62,7 @@ Route::prefix('/contact')->group(function() {
     Route::post('/itaku/thanks', [ContactController::class, 'itakuSend'])->name('itaku.thanks');
     Route::get('/itaku/thanks', [ContactController::class, 'toTop'])->name('itaku.toTop');
 });
+
+Route::get('/hiyoko', [HiyokoController::class, 'show'])->name('hiyoko');
+Route::get('/hiyoko/edit', [HiyokoController::class, 'edit'])->middleware(['auth'])->name('hiyoko.edit');
+Route::put('/hiyoko/update', [HiyokoController::class, 'update'])->middleware(['auth'])->name('hiyoko.update');

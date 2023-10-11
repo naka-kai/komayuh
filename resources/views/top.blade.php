@@ -22,7 +22,7 @@
     <div class="flex flex-col md:flex-row md:justify-between md:items-end">
         <div class="flex flex-col md:w-1/3">
             <img src="{{ asset('storage/balloon.png') }}" alt="七ヶ浜ハンドメイド市ブログもこちら" class="w-1/3 md:w-3/4 ml-auto">
-            <a href="http://akiuhandmade.blog.fc2.com/" class="block hover:opacity-80">
+            <a href="http://akiuhandmade.blog.fc2.com/" target="blank" class="block hover:opacity-80">
                 <div class="bg-orange-200 bg-opacity-50 rounded-lg w-3/4 md:w-full mx-auto py-5 px-8 flex justify-center items-center shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px]">
                     <p class="text-center font-bold md:text-lg">
                         秋保<br class="hidden md:block lg:hidden">ハンドメイド市<br>
@@ -33,7 +33,7 @@
         </div>
         <div class="flex flex-col md:w-1/3 md:ml-10 mt-5">
             <img src="{{ asset('storage/airplane.png') }}" class="w-1/3 md:w-2/3 ml-auto -mb-14 md:-mb-5 -rotate-45">
-            <a href="http://blog.livedoor.jp/tbchandmade/" class="hover:opacity-80">
+            <a href="http://blog.livedoor.jp/tbchandmade/" target="blank" class="hover:opacity-80">
                 <div class="bg-cyan-200 bg-opacity-50 rounded-lg w-3/4 md:w-full mx-auto py-5 px-8 flex justify-center items-center shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px]">
                     <p class="text-center font-bold md:text-lg">
                         仙台空港<br class="hidden md:block lg:hidden">ハンドメイド市<br>
@@ -43,7 +43,7 @@
             </a>
         </div>
         <div class="flex flex-col md:w-1/3 md:ml-10 mt-16">
-            <a href="https://handmadeks.hatenablog.com/" class="hover:opacity-80">
+            <a href="https://handmadeks.hatenablog.com/" target="blank" class="hover:opacity-80">
                 <div class="bg-pink-200 bg-opacity-50 rounded-lg w-3/4 md:w-full mx-auto py-5 px-8 flex justify-center items-center shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px]">
                     <p class="text-center font-bold md:text-lg">
                         KOMAYUH<br class="hidden md:block lg:hidden">企画<br>
@@ -72,9 +72,9 @@
             </div>
         @endauth
     @endif
-    <div class="flex flex-col md:flex-row md:justify-between py-10 w-full">
+    <div class="my-10 grid grid-cols-1 md:grid-cols-2 gap-5">
         @foreach ($topics as $topic)
-        <div class="mb-10 md:w-1/2">
+        <div class="">
             <div class="border flex h-80">
                 <div class="w-2/3 bg-cover relative" style="background-image: url('{{ asset($topic->image) }}')">
                     <p class="bg-white bg-opacity-70 p-2 text-lg md:text-xl font-bold">{!! nl2br(e($topic->title)) !!}</p>
@@ -108,7 +108,7 @@
     </div>
 </section>
 <!-- Event -->
-<section class="pb-10">
+<section class="py-10">
     <div class="flex items-center justify-center">
         <p class="mr-8 flex flex-col items-center font-bold text-2xl">
             <small class="text-sm md:text-lg">イベント</small>
@@ -133,24 +133,24 @@
                     <img src="{{ $event->image }}" alt="{{ $event->title }}" class="w-full">
                 </figure>
                 <div class="text-center py-5">
-                    <p class="font-bold text-lg px-5 leading-8 border-b-4 border-pink-300 inline-block">
+                    <p class="font-bold text-lg px-5 leading-8 border-b-4 border-pink-300 inline">
                         {!! nl2br(e($event->title)) !!}
                     </p>
-                    <div class="flex items-center text-lg mb-3 pb-3 px-5 mt-8 border-b border-gray-300">
+                    <div class="flex items-start text-lg py-3 px-5 mt-8 border-b border-gray-300">
                         <div class="w-1/4 h-10 flex justify-center items-center bg-orange-300 rounded-md font-bold">開催日</div>
-                        <p class="ml-3 w-3/4">{!! nl2br(e($event->date)) !!}</p>
+                        <p class="ml-3 mt-[0.3rem] w-3/4 text-left">{!! nl2br(e($event->date)) !!}</p>
                     </div>
-                    <div class="flex items-center text-lg mb-3 px-5 border-b pb-3 border-gray-300">
+                    <div class="flex items-start text-lg py-3 px-5 border-b border-gray-300">
                         <div class="w-1/4 h-10 flex justify-center items-center bg-orange-300 rounded-md font-bold">時間</div>
-                        <p class="ml-3 w-3/4">{!! nl2br(e($event->time)) !!}</p>
+                        <p class="ml-3 mt-[0.3rem] w-3/4 text-left">{!! nl2br(e($event->time)) !!}</p>
                     </div>
-                    <div class="flex items-center text-lg mb-3 px-5 border-b pb-3 border-gray-300">
+                    <div class="flex items-start text-lg py-3 px-5 border-b border-gray-300">
                         <div class="w-1/4 h-10 flex justify-center items-center bg-orange-300 rounded-md font-bold">場所</div>
-                        <p class="ml-3 w-3/4">{!! nl2br(e($event->place)) !!}</p>
+                        <p class="ml-3 mt-[0.3rem] w-3/4 text-left">{!! nl2br(e($event->place)) !!}</p>
                     </div>
-                    <div class="flex items-center text-lg mb-3 px-5 border-b pb-3 border-gray-300">
+                    <div class="flex items-start text-lg py-3 px-5 border-b border-gray-300">
                         <div class="w-1/4 h-10 flex justify-center items-center bg-orange-300 rounded-md font-bold">備考</div>
-                        <p class="ml-3 w-3/4">{!! nl2br(e($event->other)) !!}</p>
+                        <p class="ml-3 mt-[0.3rem] w-3/4 text-left">{!! nl2br(e($event->other)) !!}</p>
                     </div>
                 </div>
             </div>
@@ -189,7 +189,7 @@
             <p class="mb-5 text-xl font-bold">出展者募集中</p>
             <a href="{{ route('contact.index') }}" class="text-lg border-b border-blue-500 text-blue-500 hover:opacity-80">応募方法はこちら</a>
         </div>
-        <a href="#" class="w-2/3 bg-white hover:opacity-80">
+        <a href="{{ route('hiyoko') }}" class="w-2/3 bg-white hover:opacity-80">
             <div class="p-8 text-center border-orange-400 border-3 shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px] bg-[url(https://kaiblo.com/komayuh/storage/flag1.png),url(https://kaiblo.com/komayuh/storage/flag2.png)] bg-flag-position bg-contain bg-no-repeat">
                 <h4 class="font-bold text-xl mb-5">
                     ひよこ塾<br>
@@ -210,13 +210,13 @@
             <span class="font-bold text-2xl md:text-4xl">SNS</span>
         </p>
         <div class="flex justify-center items-center">
-            <a href="#" class="hover:opacity-80">
+            <a href="https://twitter.com/koma_yu4358" class="hover:opacity-80">
                 <img src="{{ asset('storage/x.png') }}" class="w-12 md:w-16 mr-4 md:mr-8">
             </a>
-            <a href="#" class="hover:opacity-80">
+            <a href="https://www.instagram.com/p/B830HgVBRSO/?utm_source=ig_web_copy_link&img_index=1" class="hover:opacity-80">
                 <img src="{{ asset('storage/instagram.png') }}" class="w-12 md:w-16 mr-4 md:mr-8">
             </a>
-            <a href="#" class="hover:opacity-80">
+            <a href="https://www.facebook.com/profile.php?id=100064450582068&fref=ts" class="hover:opacity-80">
                 <img src="{{ asset('storage/facebook.png') }}" class="w-12 md:w-16">
             </a>
         </div>
@@ -248,11 +248,11 @@
                 <p class="mt-5 text-xl font-bold">メールでお問い合わせ</p>
             </div>
         </a>
-        <a href="#" class="border-orange-400 border-3 h-48 w-2/3 md:w-1/2 shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px] bg-white flex justify-center items-center md:ml-10 hover:opacity-80">
+        <a href="tel:090-6456-0654" class="border-orange-400 border-3 h-48 w-2/3 md:w-1/2 shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px] bg-white flex justify-center items-center md:ml-10 hover:opacity-80">
             <div class="flex flex-col justify-center items-center">
                 <div class="flex justify-center items-center">
                     <img src="{{ asset('storage/tel.png') }}" class="w-16">
-                    <p class="text-2xl ml-5">000-0000-0000</p>
+                    <p class="text-2xl ml-5">090-6456-0654</p>
                 </div>
                 <p class="mt-5 text-xl font-bold">お電話でお問い合わせ</p>
             </div>

@@ -41,6 +41,7 @@
             </ul>
         </div>
         <div class="flex justify-center items-center my-10">
+            <a href="{{ route('top') }}" class="border bg-blue-300 hover:bg-opacity-80 py-2 px-8 rounded font-bold text-lg mr-3">戻る</a>
             <input type="submit" value="完了" class="border bg-orange-300 hover:bg-opacity-80 py-2 px-8 rounded font-bold text-lg">
         </div>
     </form>

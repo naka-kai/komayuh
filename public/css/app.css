@@ -12553,6 +12553,10 @@ video {
   margin-top: 2rem !important;
   margin-bottom: 2rem !important;
 }
+.my-5 {
+  margin-top: 1.25rem !important;
+  margin-bottom: 1.25rem !important;
+}
 .-mb-14 {
   margin-bottom: -3.5rem !important;
 }
@@ -12642,6 +12646,36 @@ video {
 }
 .mt-8 {
   margin-top: 2rem !important;
+}
+.mb-24 {
+  margin-bottom: 6rem !important;
+}
+.mt-12 {
+  margin-top: 3rem !important;
+}
+.mt-1 {
+  margin-top: 0.25rem !important;
+}
+.mt-\[\] {
+  margin-top:  !important;
+}
+.mt-\[0\.\] {
+  margin-top: 0. !important;
+}
+.mt-\[0\.26rem\] {
+  margin-top: 0.26rem !important;
+}
+.mt-\[0\.27rem\] {
+  margin-top: 0.27rem !important;
+}
+.mt-\[0\.28rem\] {
+  margin-top: 0.28rem !important;
+}
+.mt-\[0\.3rem\] {
+  margin-top: 0.3rem !important;
+}
+.mr-3 {
+  margin-right: 0.75rem !important;
 }
 .block {
   display: block !important;
@@ -12759,8 +12793,17 @@ video {
 .flex-col {
   flex-direction: column !important;
 }
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+.items-start {
+  align-items: flex-start !important;
+}
 .items-center {
   align-items: center !important;
+}
+.justify-start {
+  justify-content: flex-start !important;
 }
 .justify-end {
   justify-content: flex-end !important;
@@ -12770,6 +12813,9 @@ video {
 }
 .justify-between {
   justify-content: space-between !important;
+}
+.gap-5 {
+  gap: 1.25rem !important;
 }
 .overflow-hidden {
   overflow: hidden !important;
@@ -12989,6 +13035,10 @@ video {
   padding-top: 1.25rem !important;
   padding-bottom: 1.25rem !important;
 }
+.px-3 {
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
+}
 .pb-10 {
   padding-bottom: 2.5rem !important;
 }
@@ -13009,6 +13059,9 @@ video {
 }
 .pt-8 {
   padding-top: 2rem !important;
+}
+.text-left {
+  text-align: left !important;
 }
 .text-center {
   text-align: center !important;
@@ -13035,6 +13088,15 @@ video {
 .text-xl {
   font-size: 1.25rem !important;
   line-height: 1.75rem !important;
+}
+.text-\[14px\] {
+  font-size: 14px !important;
+}
+.text-\[18px\] {
+  font-size: 18px !important;
+}
+.text-\[16px\] {
+  font-size: 16px !important;
 }
 .font-bold {
   font-weight: 700 !important;
@@ -13096,6 +13158,9 @@ video {
 .text-red-500 {
   --tw-text-opacity: 1 !important;
   color: rgb(239 68 68 / var(--tw-text-opacity)) !important;
+}
+.text-\[\] {
+  color:  !important;
 }
 .underline {
   text-decoration-line: underline !important;
