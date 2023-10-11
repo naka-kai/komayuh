@@ -27,3 +27,13 @@ document.addEventListener("DOMContentLoaded", function () {
         itaku_submit.setAttribute("style", "pointer-events:none;");
     });
 });
+
+// お問い合わせ時の送信ボタン二重送信防止
+document.addEventListener("DOMContentLoaded", function () {
+    const mail_form = document.getElementById("mail_form");
+
+    document.addEventListener("submit", (e) => {
+        const mail_submit = document.getElementById("mail_submit");
+        mail_submit.setAttribute("style", "pointer-events:none;");
+    });
+});

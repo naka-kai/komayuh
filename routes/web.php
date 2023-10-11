@@ -61,6 +61,13 @@ Route::prefix('/contact')->group(function() {
     Route::post('/itaku/confirm', [ContactController::class, 'itakuConfirm'])->name('itaku.confirm');
     Route::post('/itaku/thanks', [ContactController::class, 'itakuSend'])->name('itaku.thanks');
     Route::get('/itaku/thanks', [ContactController::class, 'toTop'])->name('itaku.toTop');
+
+    Route::get('/mail', function () {
+        return view('contacts.mail.index');
+    })->name('contact.mail');
+    Route::post('/mail/confirm', [ContactController::class, 'mailConfirm'])->name('mail.confirm');
+    Route::post('/mail/thanks', [ContactController::class, 'mailSend'])->name('mail.thanks');
+    Route::get('/mail/thanks', [ContactController::class, 'toTop'])->name('mail.toTop');
 });
 
 Route::get('/hiyoko', [HiyokoController::class, 'show'])->name('hiyoko');

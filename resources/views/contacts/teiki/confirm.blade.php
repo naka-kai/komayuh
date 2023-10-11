@@ -66,7 +66,7 @@
                 <div class="flex flex-col my-8 justify-center items-center">
                     <label for="questions" class="text-lg mb-2">【質問等】</label>
                     <p>{!! nl2br(e($inputs['questions'])) !!}</p>
-                    <textarea name="questions" placeholder="回答は、主催者よりメールもしくはお電話にてご連絡いたします。" class="hidden">{{ $inputs['questions'] }}</textarea>
+                    <textarea name="questions" class="hidden">{{ $inputs['questions'] }}</textarea>
                 </div>
                 <p class="text-red-400 text-center">※ 送信には少し時間がかかります</p>
                 <div class="flex flex-col justify-center items-center my-10 md:flex-row-reverse">

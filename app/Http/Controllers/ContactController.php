@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\ContactSendTeikimail;
 use App\Mail\ContactSendAkiumail;
 use App\Mail\ContactSendItakumail;
+use App\Mail\ContactSendMailmail;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -142,6 +143,36 @@ class ContactController extends Controller
             $request->session()->regenerateToken();
 
             return view('contacts.itaku.thanks');
+        }
+    }
+
+    public function mailConfirm(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'tel' => 'required',
+            'content' => 'required',
+        ]);
+
+        $inputs = $request->all();
+
+        return view('contacts.mail.confirm', compact('inputs'));
+    }
+
+    public function mailSend(Request $request)
+    {
+        $action = $request->input('action');
+        $inputs = $request->except('action');
+
+        if ($action === 'back') {
+            return redirect()->route('contact.mail')->withInput($inputs);
+        } elseif ($action === 'submit') {
+            \Mail::to($inputs['email'])->send(new ContactSendMailmail($inputs));
+            \Mail::to('skai.bluesea@gmail.com')->send(new ContactSendMailmail($inputs));
+            $request->session()->regenerateToken();
+
+            return view('contacts.mail.thanks');
         }
     }
 

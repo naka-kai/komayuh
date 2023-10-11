@@ -242,7 +242,7 @@
         <img src="{{ asset('storage/contact.png') }}" class="w-16">
     </div>
     <div class="flex flex-col md:flex-row justify-center md:justify-between items-center w-full mb-10 md:mb-16">
-        <a href="#" class="border-orange-400 border-3 h-48 w-2/3 md:w-1/2 shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px] mb-10 md:mb-0 bg-white flex justify-center items-center hover:opacity-80">
+        <a href="{{ route('contact.mail') }}" class="border-orange-400 border-3 h-48 w-2/3 md:w-1/2 shadow-[rgba(0,_0,_0,_0.3)_0px_3px_8px] mb-10 md:mb-0 bg-white flex justify-center items-center hover:opacity-80">
             <div class="flex flex-col justify-center items-center">
                 <img src="{{ asset('storage/mail.png') }}" class="w-20">
                 <p class="mt-5 text-xl font-bold">メールでお問い合わせ</p>
