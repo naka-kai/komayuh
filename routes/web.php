@@ -21,21 +21,24 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-
+// TOP
 Route::get('/', [TopController::class, 'index'])->name('top');
 
+// イベント
 Route::get('/event/create', [EventController::class, 'create'])->middleware(['auth'])->name('event.create');
 Route::post('/event', [EventController::class, 'store'])->middleware(['auth'])->name('event.store');
 Route::get('/event/{id}', [EventController::class, 'edit'])->middleware(['auth'])->name('event.edit');
 Route::put('/event/{id}', [EventController::class, 'update'])->middleware(['auth'])->name('event.update');
 Route::delete('/event/{id}', [EventController::class, 'destroy'])->name('event.delete');
 
+// トピックス
 Route::get('/topic/create', [TopicController::class, 'create'])->middleware(['auth'])->name('topic.create');
 Route::post('/topic', [TopicController::class, 'store'])->middleware(['auth'])->name('topic.store');
 Route::get('/topic/{id}', [TopicController::class, 'edit'])->middleware(['auth'])->name('topic.edit');
 Route::put('/topic/{id}', [TopicController::class, 'update'])->middleware(['auth'])->name('topic.update');
 Route::delete('/topic/{id}', [TopicController::class, 'destroy'])->name('topic.delete');
 
+// お問い合わせ全般
 Route::prefix('/contact')->group(function() {
     Route::get('/', function() {
         return view('contacts.index');
@@ -70,6 +73,16 @@ Route::prefix('/contact')->group(function() {
     Route::get('/mail/thanks', [ContactController::class, 'toTop'])->name('mail.toTop');
 });
 
+// ひよこ塾
 Route::get('/hiyoko', [HiyokoController::class, 'show'])->name('hiyoko');
 Route::get('/hiyoko/edit', [HiyokoController::class, 'edit'])->middleware(['auth'])->name('hiyoko.edit');
 Route::put('/hiyoko/update', [HiyokoController::class, 'update'])->middleware(['auth'])->name('hiyoko.update');
+
+// エラーページ
+Route::get('/error/401', 'ErrorController@notFound')->name('error.401');
+Route::get('/error/403', 'ErrorController@notFound')->name('error.403');
+Route::get('/error/404', 'ErrorController@notFound')->name('error.404');
+Route::get('/error/419', 'ErrorController@notFound')->name('error.419');
+Route::get('/error/429', 'ErrorController@notFound')->name('error.429');
+Route::get('/error/500', 'ErrorController@notFound')->name('error.500');
+Route::get('/error/503', 'ErrorController@internalServerError')->name('error.503');
